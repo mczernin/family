@@ -16,8 +16,10 @@ application = get_wsgi_application()
 # DK added lines from heroku/django getting started- 
 # come back later to clean up what's redundant
 
-from django.core.wsgi import get_wsgi_application #this one may have been there already
+# Commenting out the new stuff below to see if the simple stuff works first
 
-from dj_static import Cling
+#from django.core.wsgi import get_wsgi_application #this one may have been there already
 
-application = Cling(get_wsgi_application())
+#from dj_static import Cling
+
+#application = Cling(get_wsgi_application())
