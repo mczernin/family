@@ -10,6 +10,23 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.8/howto/static-files/
+
+# DK note: adding from heroku/django instructions
+
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
@@ -101,32 +118,4 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
-
-# DK note: heroku/django notes tell me to add this stuff to the bottom
-# Trying it as-is first, but then should clean up the above stuff now redundant
-
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
-
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
-
-# Static asset configuration
-#import os  #DK: not needed since it's already there above 
-#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-#STATIC_ROOT = 'staticfiles'
-#STATIC_URL = '/static/'
-
-#STATICFILES_DIRS = (
-#    os.path.join(BASE_DIR, 'static'), 
-#)
 
