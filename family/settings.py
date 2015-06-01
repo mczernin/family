@@ -10,14 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-
-
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-
-
-
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -36,9 +28,12 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'), 
 )  # DK: added from instructions
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+
+
+# Database
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 # DK note: the heroku/django instructions have me add DATABASES['default'] stuff below
 DATABASES = {
