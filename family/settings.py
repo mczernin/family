@@ -11,9 +11,18 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+# Database
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+
+# DK note: the heroku/django instructions have me add DATABASES['default'] stuff below
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+
+}
 # DK note: adding from heroku/django instructions
 
 # Parse database configuration from $DATABASE_URL
@@ -37,6 +46,12 @@ STATIC_URL = '/static/' # DK: added from instructions
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'), 
 )  # DK: added from instructions
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.8/howto/static-files/
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -93,17 +108,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'family.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-# DK note: the heroku/django instructions have me add DATABASES['default'] stuff below
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-
-}
+#DK: moved databases stuff from here
 
 
 # Internationalization
