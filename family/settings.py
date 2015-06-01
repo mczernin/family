@@ -14,7 +14,12 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = 'staticfiles' # DK: added from instructions
+STATIC_URL = '/static/' # DK: added from instructions
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'), 
+)  # DK: added from instructions
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -101,7 +106,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
 
 # DK note: heroku/django notes tell me to add this stuff to the bottom
 # Trying it as-is first, but then should clean up the above stuff now redundant
@@ -117,12 +121,12 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 # Static asset configuration
-import os 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
+#import os  #DK: not needed since it's already there above 
+#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+#STATIC_ROOT = 'staticfiles'
+#STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'), 
-)
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'static'), 
+#)
 
