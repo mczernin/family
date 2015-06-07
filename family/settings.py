@@ -103,9 +103,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'family.wsgi.application'
 
 
-#DK: moved databases stuff from here
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
