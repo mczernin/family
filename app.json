@@ -1,0 +1,7 @@
+{
+  "name": "Family Tree",
+  "description": "Our Family Tree",
+  "repository": "https://github.com/mczernin/family",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["family", "tree"]
+}
